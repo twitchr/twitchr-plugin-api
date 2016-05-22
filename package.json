@@ -1,0 +1,20 @@
+{
+  "name": "twitchr-plugin-api",
+  "version": "0.0.1",
+  "description": "A set of interfaces required to build twitchr plugins",
+  "author": "Jonas Bürkel <buerkelj@gmail.com>",
+  "main": "index.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/twitchr/twitchr-plugin-api"
+  },
+  "bugs": {
+    "url": "https://github.com/twitchr/twitchr-plugin-api/issues"
+  },
+  "keywords": [
+    "twitchr",
+    "plugin",
+    "api"
+  ],
+  "license": "MIT"
+}
