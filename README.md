@@ -16,15 +16,15 @@ npm install --save twitchr-plugin-api
 A basic plugin structure inside an `index.ts` file might look like this:
 
 ```ts
-import * as pluginApi from 'twitchr-plugin-api';
+import * as api from 'twitchr-plugin-api';
 
 ...
 
-let hooks: pluginApi.PluginEventListener = {
+const hooks: api.PluginEventListener = {
     ...
 };
 
-let plugin: pluginApi.Plugin = {
+const plugin: api.Plugin = {
     hooks: hooks,
 };
 
@@ -32,9 +32,9 @@ export = plugin;
 ```
 
 Every plugin must export an object of type `Plugin` whose `hooks` property is used to define the plugin's event listeners.
-Currently supported events are `ACTION`, `JOIN`, `MESSAGE`, `NAMES` and `PART`.
+Currently supported events are `JOIN`, `PRIVMSG`, `NAMES` and `PART`.
 
-Each event listener takes a number of event-related arguments and returns a string containing a message or a command to be executed by the IRC client.
+Each event listener takes a context argument which provides information about the respective event. This context argument is also used to perform Twitch IRC related actions like `kick()` or `timeout()`.
 For a simple example see [twitchr-example](https://github.com/twitchr/twitchr-example). Use it as a starting point.
 
 **Important:** Plugins only work if their project folders contain at least a `package.json` and an `index.ts` file exporting an object of type `Plugin`.
