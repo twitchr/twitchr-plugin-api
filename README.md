@@ -34,11 +34,11 @@ export = plugin;
 Every plugin must export an object of type `Plugin` whose `hooks` property is used to define the plugin's event listeners.
 Currently supported events are `JOIN`, `PRIVMSG`, `NAMES` and `PART`.
 
-Each event listener takes a context argument which provides information about the respective event. This context argument is also used to perform Twitch IRC related actions like `kick()` or `timeout()`.
+Each event listener takes a context argument which provides information about the respective event.
+This context argument is also used to perform Twitch IRC related actions like `ban()` or `timeout()`.
 For a simple example see [twitchr-example](https://github.com/twitchr/twitchr-example). Use it as a starting point.
 
-**Important:** Plugins only work if their project folders contain at least a `package.json` and an `index.ts` file exporting an object of type `Plugin`.
-Using TypeScript is the recommended approach but plain JavaScript works as well. In that case use this library as a reference only.
+Using TypeScript and building the plugin e.g. on `prepublish` is the recommended approach but using plain JavaScript works as well. In that case use this library as a reference only.
 
 ## License
 
